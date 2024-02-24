@@ -75,7 +75,7 @@ button {
 }
 ```
 
-#### 2. Iterate over numbers with each, use a data-attribute for every operator
+#### 2. Iterate over numbers with each
 
 ```ts
 const numbers_1_3 = ['1', '2', '3'];
@@ -83,12 +83,11 @@ const numbers_4_6 = ['4', '5', '6'];
 const numbers_7_9 = ['7', '8', '9'];
 ```
 
+<!-- prettier-ignore -->
 ```html
 {#each numbers_1_3 as number}
-<button class="number" id="{number}">{number}</button>
+	<button class="number" id="{number}">{number}</button>
 {/each}
 ```
 
-```html
-<button class="operator multiply" data-operator={'*'}>*</button>
-```
+#### 3. Handle calculator buttons
