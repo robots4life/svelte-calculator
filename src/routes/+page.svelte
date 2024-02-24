@@ -2,6 +2,14 @@
 	const numbers_1_3 = ['1', '2', '3'];
 	const numbers_4_6 = ['4', '5', '6'];
 	const numbers_7_9 = ['7', '8', '9'];
+
+	const handleNumber = (number: string) => {
+		console.log('number : ', number);
+	};
+
+	const handleOperator = (operator: string) => {
+		console.log('operator : ', operator);
+	};
 </script>
 
 <main>
@@ -9,28 +17,45 @@
 		<div class="display">123</div>
 		<div class="digits">
 			<button class="clear span-3">C</button>
-			<button class="operator divide" data-operator="/">/</button>
+			<button class="operator divide" data-operator={'/'} on:click={() => handleOperator('/')}
+				>/</button
+			>
 
 			{#each numbers_1_3 as number}
-				<button class="number" id={number} data-number={number}>{number}</button>
+				<button
+					class="number"
+					id={number}
+					data-number={number}
+					on:click={() => handleNumber(number)}>{number}</button
+				>
 			{/each}
 
-			<button class="operator multiply" data-operator="*">*</button>
+			<button class="operator multiply" data-operator={'*'}>*</button>
 
 			{#each numbers_4_6 as number}
-				<button class="number" id={number} data-number={number}>{number}</button>
+				<button
+					class="number"
+					id={number}
+					data-number={number}
+					on:click={() => handleNumber(number)}>{number}</button
+				>
 			{/each}
 
-			<button class="operator subtract" data-operator="-">-</button>
+			<button class="operator subtract" data-operator={'-'}>-</button>
 
 			{#each numbers_7_9 as number}
-				<button class="number" id={number} data-number={number}>{number}</button>
+				<button
+					class="number"
+					id={number}
+					data-number={number}
+					on:click={() => handleNumber(number)}>{number}</button
+				>
 			{/each}
 
-			<button class="operator add" data-operator="+">+</button>
+			<button class="operator add" data-operator={'+'}>+</button>
 			<button class="number span-2" id="0" data-number="0">0</button>
 			<button class="dot" data-dot=".">.</button>
-			<button class="operator equal" data-operator="=">=</button>
+			<button class="operator equal" data-operator={'='}>=</button>
 		</div>
 	</div>
 </main>
