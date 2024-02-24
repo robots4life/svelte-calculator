@@ -90,4 +90,4 @@ const numbers_7_9 = ['7', '8', '9'];
 {/each}
 ```
 
-#### 3. Handle calculator buttons
+#### 3. Handle calculator input
