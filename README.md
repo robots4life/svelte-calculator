@@ -118,41 +118,48 @@ const handleDot = (dot: string) => {
 ```
 
 ```html
-<div class="digits">
-	<button class="clear span-3" on:click="{()" ="">handleClear()}>C</button>
-	<button class="operator divide {selectedOperator === '/' ? 'op-active' : ''}" on:click="{()" ="">
-		handleOperator('/')}>/
-	</button>
-	{#each numbers_1_3 as number}
-	<button class="number" on:click="{()" ="">handleNumber(number)}>{number}</button>
-	{/each}
-	<button
-		class="operator multiply {selectedOperator === '*' ? 'op-active' : ''}"
-		on:click="{()"
-		=""
-	>
-		handleOperator('*')}>*
-	</button>
-	{#each numbers_4_6 as number}
-	<button class="number" on:click="{()" ="">handleNumber(number)}>{number}</button>
-	{/each}
-	<button
-		class="operator subtract {selectedOperator === '-' ? 'op-active' : ''}"
-		on:click="{()"
-		=""
-	>
-		handleOperator('-')}>-
-	</button>
-	{#each numbers_7_9 as number}
-	<button class="number" on:click="{()" ="">handleNumber(number)}>{number}</button>
-	{/each}
-	<button class="operator add {selectedOperator === '+' ? 'op-active' : ''}" on:click="{()" ="">
-		handleOperator('+')}>+
-	</button>
-	<button class="number span-2" on:click="{()" ="">handleNumber('0')}>0</button>
-	<button class="dot" on:click="{()" ="">handleDot('.')}>.</button>
-	<button class="operator equal {selectedOperator === '=' ? 'op-active' : ''}" on:click="{()" ="">
-		handleOperator('=')}>=
-	</button>
+<div class="calculator">
+	<div class="display">{display}</div>
+	<div class="digits">
+		<button class="clear span-3" on:click="{()" ="">handleClear()}>C</button>
+		<button
+			class="operator divide {selectedOperator === '/' ? 'op-active' : ''}"
+			on:click="{()"
+			=""
+		>
+			handleOperator('/')}>/
+		</button>
+		{#each numbers_1_3 as number}
+		<button class="number" on:click="{()" ="">handleNumber(number)}>{number}</button>
+		{/each}
+		<button
+			class="operator multiply {selectedOperator === '*' ? 'op-active' : ''}"
+			on:click="{()"
+			=""
+		>
+			handleOperator('*')}>*
+		</button>
+		{#each numbers_4_6 as number}
+		<button class="number" on:click="{()" ="">handleNumber(number)}>{number}</button>
+		{/each}
+		<button
+			class="operator subtract {selectedOperator === '-' ? 'op-active' : ''}"
+			on:click="{()"
+			=""
+		>
+			handleOperator('-')}>-
+		</button>
+		{#each numbers_7_9 as number}
+		<button class="number" on:click="{()" ="">handleNumber(number)}>{number}</button>
+		{/each}
+		<button class="operator add {selectedOperator === '+' ? 'op-active' : ''}" on:click="{()" ="">
+			handleOperator('+')}>+
+		</button>
+		<button class="number span-2" on:click="{()" ="">handleNumber('0')}>0</button>
+		<button class="dot" on:click="{()" ="">handleDot('.')}>.</button>
+		<button class="operator equal {selectedOperator === '=' ? 'op-active' : ''}" on:click="{()" ="">
+			handleOperator('=')}>=
+		</button>
+	</div>
 </div>
 ```
