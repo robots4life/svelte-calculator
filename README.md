@@ -142,13 +142,13 @@ const handleOperator = (operator: string) => {
 		console.log('displayArray : ', displayArray);
 
 		let numbers: number[] = [];
-		// https://www.typescriptlang.org/docs/handbook/2/objects.html
+
 		interface Calc {
 			numbers: number[];
 			operators: string[];
 			math: (number | string)[];
 		}
-		// https://bobbyhadz.com/blog/typescript-type-is-missing-following-properties-from-type
+
 		let calc: Calc = { numbers: [], operators: [], math: [] };
 		let numbersIndex: number = 0;
 		let operatorsIndex: number = 0;
