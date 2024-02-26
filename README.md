@@ -1,8 +1,8 @@
 # Svelte Calculator
 
-<img src="/static/Screenshot_20240226_160922.png">
-
 The aim is to have a simple basic calculator working, while, and for brevity, rules that can break the evaluation of the calculation, are not included.
+
+<img src="/static/Screenshot_20240226_160922.png">
 
 ### 1. Create markup and styles
 
