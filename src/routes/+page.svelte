@@ -89,6 +89,7 @@
 
 	const handleDot = (dot: string) => {
 		console.log('dot : ', dot);
+		displayArray.push(dot);
 	};
 </script>
 
@@ -125,7 +126,7 @@
 				on:click={() => handleOperator('+')}>+</button
 			>
 			<button class="number span-2" on:click={() => handleNumber('0')}>0</button>
-			<button disabled class="dot" on:click={() => handleDot('.')}>.</button>
+			<button class="dot" on:click={() => handleDot('.')}>.</button>
 			<button
 				class="operator equal {selectedOperator === '=' ? 'op-active' : ''}"
 				on:click={() => handleOperator('=')}>=</button

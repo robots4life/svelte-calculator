@@ -133,17 +133,18 @@ const handleOperator = (operator: string) => {
 	console.log(display);
 
 	if (operator === '=') {
+		// remove "=" from array
 		displayArray.pop();
 		console.log('displayArray : ', displayArray);
 
 		let numbers: number[] = [];
-
+		// https://www.typescriptlang.org/docs/handbook/2/objects.html
 		interface Calc {
 			numbers: number[];
 			operators: string[];
 			math: (number | string)[];
 		}
-
+		// https://bobbyhadz.com/blog/typescript-type-is-missing-following-properties-from-type
 		let calc: Calc = { numbers: [], operators: [], math: [] };
 		let numbersIndex: number = 0;
 		let operatorsIndex: number = 0;
@@ -186,6 +187,7 @@ const handleOperator = (operator: string) => {
 
 const handleDot = (dot: string) => {
 	console.log('dot : ', dot);
+	displayArray.push(dot);
 };
 ```
 
@@ -230,7 +232,7 @@ const handleDot = (dot: string) => {
 			handleOperator('+')}>+
 		</button>
 		<button class="number span-2" on:click="{()" ="">handleNumber('0')}>0</button>
-		<button disabled class="dot" on:click="{()" ="">handleDot('.')}>.</button>
+		<button class="dot" on:click="{()" ="">handleDot('.')}>.</button>
 		<button class="operator equal {selectedOperator === '=' ? 'op-active' : ''}" on:click="{()" ="">
 			handleOperator('=')}>=
 		</button>
