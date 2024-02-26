@@ -2,7 +2,7 @@
 
 <img src="/static/Screenshot_20240226_160922.png">
 
-The aim is to have a simple basic calculator working while, for brevity, not including rules that can break the evaluation of the calculation.
+The aim is to have a simple basic calculator working, while, and for brevity, rules that can break the evaluation of the calculation, are not included.
 
 #### 1. Create markup and styles
 
@@ -96,7 +96,9 @@ const numbers_7_9 = ['7', '8', '9'];
 
 #### 3. Handle calculator state and input
 
-This handles correct evaluation of the calculation with operator precedence. By binding **`buttonDivide`** and **`buttonMultiply`** to a variable of type **`HTMLButtonElement`** one could enforce rules that i.e. do not allow having a calculation that starts with `**` or `//`.
+This handles correct evaluation of the calculation with operator precedence.
+
+By binding **`buttonDivide`** and **`buttonMultiply`** to a variable of type **`HTMLButtonElement`** one could enforce rules that i.e. do not allow having a calculation that starts with `**` or `//`.
 
 ```ts
 const numbers_1_3 = ['1', '2', '3'];
