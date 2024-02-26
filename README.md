@@ -1,5 +1,7 @@
 # Svelte Calculator
 
+The aim is to have a simple basic calculator working while, for brevity, not including rules that can break the evaluation of the calculation.
+
 #### 1. Create markup and styles
 
 ```html
@@ -92,24 +94,94 @@ const numbers_7_9 = ['7', '8', '9'];
 
 #### 3. Handle calculator state and input
 
+This handles correct evaluation of the calculation with operator precedence. By binding **`buttonDivide`** and **`buttonMultiply`** to a variable of type **`HTMLButtonElement`** one could enforce rules that i.e. do not allow having a calculation that starts with `**` or `//`.
+
 ```ts
-let display = '';
+const numbers_1_3 = ['1', '2', '3'];
+const numbers_4_6 = ['4', '5', '6'];
+const numbers_7_9 = ['7', '8', '9'];
+
 let selectedOperator = '';
+let display: string = '';
+let displayArray: string[] = [];
+
+let buttonDivide: HTMLButtonElement;
+let buttonMultiply: HTMLButtonElement;
 
 const handleClear = () => {
 	console.log('clear');
+	displayArray = [];
 	display = '';
+	selectedOperator = '';
 };
 
 const handleNumber = (number: string) => {
 	console.log('number : ', number);
-	display = `${display}${number}`;
+
+	displayArray.push(number);
+	display = displayArray.join('');
 };
 
 const handleOperator = (operator: string) => {
 	console.log('operator : ', operator);
 	selectedOperator = operator;
-	console.log('selectedOperator : ', selectedOperator);
+
+	displayArray.push(operator);
+	console.log(displayArray);
+
+	display = displayArray.join('');
+	console.log(display);
+
+	if (operator === '=') {
+		displayArray.pop();
+		console.log('displayArray : ', displayArray);
+
+		let numbers: number[] = [];
+
+		interface Calc {
+			numbers: number[];
+			operators: string[];
+			math: (number | string)[];
+		}
+
+		let calc: Calc = { numbers: [], operators: [], math: [] };
+		let numbersIndex: number = 0;
+		let operatorsIndex: number = 0;
+
+		displayArray.forEach((element, index, array) => {
+			// if string element is a number
+			if (!isNaN(parseInt(element))) {
+				numbers.push(parseInt(element));
+				calc.numbers[numbersIndex] = +numbers.join('');
+
+				// if the last element in the displayArray is iterated
+				if (index === array.length - 1) {
+					calc.math.push(calc.numbers[calc.numbers.length - 1]);
+				}
+			}
+			// if string element is an operator
+			if (isNaN(parseInt(element))) {
+				calc.operators[operatorsIndex] = element;
+
+				calc.math.push(calc.numbers[calc.numbers.length - 1]);
+				calc.math.push(calc.operators[calc.operators.length - 1]);
+
+				operatorsIndex++;
+				numbersIndex++;
+				numbers = [];
+			}
+		});
+		console.log('numbers : ', numbers);
+		console.log('calc : ', calc);
+
+		let calculationString = Object.values(calc.math).join('');
+		console.log('calculationString : ', calculationString);
+
+		let result = eval(calculationString);
+		console.log('result : ', result);
+
+		display = result;
+	}
 };
 
 const handleDot = (dot: string) => {
@@ -123,6 +195,7 @@ const handleDot = (dot: string) => {
 	<div class="digits">
 		<button class="clear span-3" on:click="{()" ="">handleClear()}>C</button>
 		<button
+			bind:this="{buttonDivide}"
 			class="operator divide {selectedOperator === '/' ? 'op-active' : ''}"
 			on:click="{()"
 			=""
@@ -133,6 +206,7 @@ const handleDot = (dot: string) => {
 		<button class="number" on:click="{()" ="">handleNumber(number)}>{number}</button>
 		{/each}
 		<button
+			bind:this="{buttonMultiply}"
 			class="operator multiply {selectedOperator === '*' ? 'op-active' : ''}"
 			on:click="{()"
 			=""
@@ -156,7 +230,7 @@ const handleDot = (dot: string) => {
 			handleOperator('+')}>+
 		</button>
 		<button class="number span-2" on:click="{()" ="">handleNumber('0')}>0</button>
-		<button class="dot" on:click="{()" ="">handleDot('.')}>.</button>
+		<button disabled class="dot" on:click="{()" ="">handleDot('.')}>.</button>
 		<button class="operator equal {selectedOperator === '=' ? 'op-active' : ''}" on:click="{()" ="">
 			handleOperator('=')}>=
 		</button>
