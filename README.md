@@ -243,3 +243,9 @@ const handleDot = (dot: string) => {
 	</div>
 </div>
 ```
+
+#### ref
+
+<a href="https://stackoverflow.com/questions/175739/how-can-i-check-if-a-string-is-a-valid-number" target="_blank">https://stackoverflow.com/questions/175739/how-can-i-check-if-a-string-is-a-valid-number</a>
+
+<a href="https://stackoverflow.com/questions/2276021/evaluating-a-string-as-a-mathematical-expression-in-javascript" target="_blank">https://stackoverflow.com/questions/2276021/evaluating-a-string-as-a-mathematical-expression-in-javascript</a>
