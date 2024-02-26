@@ -4,7 +4,7 @@
 
 The aim is to have a simple basic calculator working, while, and for brevity, rules that can break the evaluation of the calculation, are not included.
 
-#### 1. Create markup and styles
+### 1. Create markup and styles
 
 ```html
 <main>
@@ -79,7 +79,7 @@ button {
 }
 ```
 
-#### 2. Iterate over numbers with each
+### 2. Iterate over numbers with each
 
 ```ts
 const numbers_1_3 = ['1', '2', '3'];
@@ -94,7 +94,7 @@ const numbers_7_9 = ['7', '8', '9'];
 {/each}
 ```
 
-#### 3. Handle calculator state and input
+### 3. Handle calculator state and input
 
 This handles correct evaluation of the calculation with operator precedence.
 
@@ -244,7 +244,7 @@ const handleDot = (dot: string) => {
 </div>
 ```
 
-#### ref
+### ref
 
 <a href="https://stackoverflow.com/questions/175739/how-can-i-check-if-a-string-is-a-valid-number" target="_blank">https://stackoverflow.com/questions/175739/how-can-i-check-if-a-string-is-a-valid-number</a>
 
