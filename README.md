@@ -249,3 +249,5 @@ const handleDot = (dot: string) => {
 <a href="https://stackoverflow.com/questions/175739/how-can-i-check-if-a-string-is-a-valid-number" target="_blank">https://stackoverflow.com/questions/175739/how-can-i-check-if-a-string-is-a-valid-number</a>
 
 <a href="https://stackoverflow.com/questions/2276021/evaluating-a-string-as-a-mathematical-expression-in-javascript" target="_blank">https://stackoverflow.com/questions/2276021/evaluating-a-string-as-a-mathematical-expression-in-javascript</a>
+
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_precedence" target="_blank">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_precedence</a>
